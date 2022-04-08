@@ -1,0 +1,123 @@
+/* attemt at responsive scaling */
+@media only screen and (max-width: 1920px) {
+  #container {
+    width: 820px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #container {
+    width: 608px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  #container {
+    width: 396px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+
+/* main elements  */
+
+body {
+  background-color: rgb(18, 18, 18);
+}
+
+a {
+  user-select: none;
+}
+#container {
+  height: fit-content;
+  margin: auto;
+  margin-top: 169px;
+
+  display: grid;
+  grid-gap: 28px;
+}
+
+.item {
+  width: 184px;
+  height: 260px;
+  background-color: rgb(24, 24, 24);
+  border-radius: 6px;
+  justify-self: center;
+  display: flex;
+  flex-flow: column;
+  position: relative;
+
+  transition-duration: 0.3s;
+}
+
+.img-small {
+  margin: auto;
+  margin-top: 17px;
+  width: 150px;
+  height: 150px;
+  border-radius: 4px;
+
+  box-shadow: 0px 10px 17px rgb(24, 24, 24);
+}
+
+.title {
+  margin-bottom: 56px;
+  margin-left: 17px;
+  font-family: Helvetica;
+  font-size: 16px;
+  color: rgb(224, 224, 224);
+  text-align: left;
+  font-weight: bold;
+
+  transition-duration: 0.3s;
+}
+
+/* pop up description thing */
+
+.desc {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.text {
+  visibility: hidden;
+  opacity: 0%;
+  padding: 10px;
+  border-radius: 6px;
+
+  position: absolute;
+  top: 240px;
+  z-index: 1;
+
+  font-family: Helvetica;
+  font-size: 16px;
+  line-height: 20px;
+  color: #fff;
+  text-align: center;
+
+  transition-duration: 0.3s;
+}
+
+/* animations  */
+
+.item:hover .text {
+  visibility: visible;
+  opacity: 100%;
+  top: 174px;
+}
+
+.item:hover .title {
+  opacity: 0%;
+}
+
+.item:hover {
+  background-color: rgb(40, 40, 40);
+  box-shadow: 0px 10px 17px rgb(24, 24, 24);
+
+  transform: scale(1.4);
+  z-index: 1;
+}
